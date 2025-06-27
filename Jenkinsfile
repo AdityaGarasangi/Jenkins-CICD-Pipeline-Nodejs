@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                git 'https://github.com/AdityaGarasangi/Jenkins-CICD-Pipeline-Nodejs.git'
+                git 'https://github.com/AdityaGarasangi/Jenkins-CICD-Pipeline-Nodejs'
             }
         }
 
