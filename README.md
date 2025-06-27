@@ -148,41 +148,42 @@ docker rm jenkins-node-app
 ```
 
 ---
-## 📸 Screenshot
+## 📸 Screenshots
 
 ### 🧩 Jenkins Dashboard  
 Jenkins dashboard showing the list of jobs and system status.  
-![Jenkins Dashboard](screenshots/dashboard.png)
+![Jenkins Dashboard](screenshot/dashboard.png)
 
 ---
 
 ### 📊 Pipeline Stages  
 All pipeline stages from Checkout to Deployment shown as successful.  
-![Pipeline Stages](screenshots/pipeline-stages.png)
+![Pipeline Stages](screenshot/pipeline-stages.png)
 
 ---
 
 ### 📦 Project Build Status  
 Pipeline status summary and job history in Jenkins UI.  
-![Project Status](screenshots/project-status.png)
+![Project Status](screenshot/project-status.png)
 
 ---
 
 ### 🐳 Docker Desktop Settings  
 Docker daemon exposed via TCP to allow Jenkins container to run Docker commands.  
-![Docker Dashboard](screenshots/docker-dashboard.png)
+![Docker Dashboard](screenshot/docker-dashboard.png)
 
 ---
 
 ### 🧾 Docker Container Running  
 Docker container running the Node.js app on port 3000.  
-![Docker ps Output](screenshots/docker-ps.png)
+![Docker ps Output](screenshot/docker-ps.png)
 
 ---
 
 ### 🌐 Node.js App in Browser  
 Node.js application successfully deployed and running at http://localhost:3000.  
-![Node.js App](screenshots/node-app.png)
+![Node.js App](screenshot/node-app.png)
+
 
 ---
 
