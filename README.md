@@ -14,10 +14,13 @@ The Jenkins pipeline:
 ## 📁 Project Structure
 ```pgsql
 .
-├── Jenkinsfile # Jenkins pipeline configuration
-├── Dockerfile # Defines Node.js container build
-├── package.json # Node.js app dependencies and scripts
-├── index.js / app.js # Entry point of the Node.js app
+├── node_modules/
+├── Dockerfile
+├── index.html
+├── index.js
+├── Jenkinsfile
+├── package-lock.json
+└── package.json
 ```
 
 
