@@ -61,17 +61,17 @@ Docker Desktop → Settings → General → ✅ "Expose daemon on tcp://localhos
 
 ## Dockerfile (Used to Build App Image)
 ```Dockerfile
-FROM node:18
+FROM jenkins/jenkins:lts
 
-WORKDIR /app
+USER root
 
-COPY package*.json ./
-RUN npm install
+# Install Docker CLI
+RUN apt-get update && \
+    apt-get install -y docker.io curl gnupg && \
+    curl -fsSL https://deb.nodesource.com/setup_18.x | bash - && \
+    apt-get install -y nodejs
 
-COPY . .
-
-EXPOSE 3000
-CMD ["npm", "start"]
+USER jenkins
 ```
 
 ---
@@ -81,14 +81,10 @@ CMD ["npm", "start"]
 pipeline {
     agent any
 
-    environment {
-        DOCKER_HOST = 'tcp://host.docker.internal:2375'
-    }
-
     stages {
         stage('Checkout') {
             steps {
-                git 'https://github.com/your-username/your-node-repo.git'
+                 git branch: 'main', url: 'https://github.com/AdityaGarasangi/Jenkins-CICD-Pipeline-Nodejs.git'
             }
         }
 
@@ -120,8 +116,7 @@ pipeline {
     post {
         always {
             echo 'Cleaning up...'
-            // Uncomment below line for auto cleanup
-            // sh 'docker rm -f jenkins-node-app || true'
+           // sh 'docker rm -f jenkins-node-app || true'
         }
     }
 }
