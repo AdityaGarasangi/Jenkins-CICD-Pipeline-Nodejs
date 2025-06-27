@@ -28,7 +28,7 @@ pipeline {
 
         stage('Run Docker Container') {
             steps {
-                sh 'docker run -d --rm -p 3000:3000 --name jenkins-node-app jenkins-node-app'
+                sh 'docker run -d -p 3000:3000 --name jenkins-node-app jenkins-node-app'
             }
         }
     }
