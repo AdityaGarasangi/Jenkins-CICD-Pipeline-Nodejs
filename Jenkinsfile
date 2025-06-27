@@ -36,7 +36,7 @@ pipeline {
     post {
         always {
             echo 'Cleaning up...'
-            sh 'docker rm -f jenkins-node-app || true'
+           // sh 'docker rm -f jenkins-node-app || true'
         }
     }
 }
