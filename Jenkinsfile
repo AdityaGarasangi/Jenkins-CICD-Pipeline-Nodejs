@@ -22,13 +22,13 @@ pipeline {
 
         stage('Build Docker Image') {
             steps {
-                sh 'docker build -t jenkins-p1 .'
+                sh 'docker build -t jenkins-node-app .'
             }
         }
 
         stage('Run Docker Container') {
             steps {
-                sh 'docker run -d --rm -p 3000:3000 --name jenkins-p1 jenkins-p1'
+                sh 'docker run -d --rm -p 3000:3000 --name jenkins-node-app jenkins-node-app'
             }
         }
     }
@@ -36,7 +36,7 @@ pipeline {
     post {
         always {
             echo 'Cleaning up...'
-            sh 'docker rm -f jenkins-p1 || true'
+            sh 'docker rm -f jenkins-node-app || true'
         }
     }
 }
